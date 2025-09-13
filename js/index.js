@@ -27,7 +27,7 @@ const form = document.querySelector("#task_form");
 const taskInput = document.querySelector("#task");
 const taskDateInput = document.querySelector("#due_date");
 const taskSubmitBtn = document.querySelector("#add_task");
-const taskList = document.querySelector("#task_list");
+const taskList = document.querySelector("#task__list");
 const completedTasksBtn = document.querySelector("#completed__tasks");
 const pendingTasksBtn = document.querySelector("#pending__tasks");
 let tasks = [];
@@ -50,7 +50,7 @@ taskSubmitBtn.addEventListener(
         tasks.push(new Task(taskInput.value, taskDateInput.value, "Pending"));
         console.log(tasks);
         // create task item
-        renderTasks();
+        renderTasks(tasks);
         form.reset();
         }
     }
@@ -72,7 +72,7 @@ taskList.addEventListener(
             completedTasks.push({taskStatus: "Completed"});
             console.log(completedTasks);
         }     
-         if (target.classList.contains("edit_btn")) {
+         if (event.target.classList.contains("edit_btn")) {
         const newName = prompt("Edit task name:", tasks[index].taskName);
         const newDate = prompt("Edit due date (YYYY-MM-DD):", tasks[index].taskDate);
         if (newName && newDate) {
@@ -118,7 +118,7 @@ function Task(taskName, taskDate, taskStatus){
     this.taskStatus = taskStatus;
 }
 /* create a function to render tasks*/
-function renderTasks(){
+function renderTasks(tasks){
     taskList.innerHTML = "";
     for(let task of tasks){
         const taskItem = document.createElement("li");
