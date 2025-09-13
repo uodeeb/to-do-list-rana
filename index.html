@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"href="/css/style.css">
+    <title>Take-it-task App</title>
+</head>
+<body>
+    <div id="container">
+        <header id="hd">
+            <img src="/images/Take-it-task.png" alt="App Logo">
+            <h1 id="head">Unlock your productivity with our to-do list</h1>
+        </header>
+        <main id="mn">
+        <section id="mn__section01"class="mn__section">
+                <h2>Welcome to Take-it-task</h2>
+                <p>"The key is not to prioritize what's on your schedule, but to schedule your priorities."</p>
+                 <form id="task_form">
+                  <label for="task">Task:</label>
+                  <input type="text" name="task" id="task" placeholder="Enter your task here">
+                  <label for="due-date">Due Date:</label>
+                  <input type="date" name="due-date" id="due_date">
+                  <input type="submit" value="Submit" id="add_task">
+                </form>
+        </section>      
+
+        <section id="mn__section02" class="mn__section">
+                <h2>Your Tasks</h2>
+                <div id="filter_controls">
+                    <button id="all_tasks">All Tasks</button>
+                    <button id="completed_tasks">Completed Tasks</button>
+                    <button id="pending_tasks">Pending Tasks</button>
+                </div>
+                <ul id="task__list">
+                  
+                </ul>
+                              
+        </section>
+        </main>
+        <footer id="ft">
+            <p>All Rights Reserved &copy; 2025</p>
+        </footer>
+        </div>
+   <script src="/js/index.js"></script> 
+</body>
+</html>
